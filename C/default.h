@@ -5,5 +5,5 @@
     #include <time.h>
     #include <omp.h>
     unsigned long long int *input(unsigned long long int *sizeOfArray);
-    void printArray(unsigned long long int *array, unsigned long long int sizeOfArray);
+    void printArray(unsigned long long int *array, unsigned long long int sizeOfArray, int type);
 #endif

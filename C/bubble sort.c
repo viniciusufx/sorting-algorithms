@@ -7,15 +7,15 @@ int main(int argc, char const *argv[])
     unsigned long long int *array = input(&sizeOfArray), temp;
     double start,end;
     start = omp_get_wtime();
-    for (int i = 0; i < sizeOfArray; i++)
+    for (unsigned long long int i = 0; i < sizeOfArray; i++)
     {
-        for (int j = 0; j < sizeOfArray-1-i; j++)
+        for (unsigned long long int j = 1; j < sizeOfArray; j++)
         {
-            if (array[j]>array[j+1])
+            if (array[j]<array[j-1])
             {
                 temp = array[j];
-                array[j] = array[j+1];
-                array[j+1]=temp;
+                array[j] = array[j-1];
+                array[j-1]=temp;
             }
         }
     }

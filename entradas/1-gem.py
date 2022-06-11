@@ -1,14 +1,14 @@
 #!/bin/python3
 import argparse
 from ast import arg
-from random import shuffle
+import random
 
-def gem(size):
+def gem(size, shuffle):
     lista = list()
     for i in range(1, size+1):
         lista.append(i)
-    for i in range(1, size+1):
-        shuffle(lista)
+    for i in range(1, shuffle):
+        random.shuffle(lista)
     
     with open(str(size)+'.in', 'w') as myfile:
         for i in lista:
@@ -18,12 +18,13 @@ def gem(size):
                 print(i, file=myfile)
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-s', '--size', help="Numbers to be generated", type=int)
+    parser.add_argument('-si', '--size', help="Numbers to be generated", type=int)
+    parser.add_argument('-sh', '--shuffle', type=int)
     args = parser.parse_args()
-    if args.size is None:
+    if args.size is None or args.shuffle is None:
         parser.print_help()
     else:
-        gem(args.size)
+        gem(args.size, args.shuffle)
 
 if __name__ == "__main__":
     main()
