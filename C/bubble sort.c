@@ -21,6 +21,6 @@ int main(int argc, char const *argv[])
     }
     end = omp_get_wtime();
     printf("Application runtime: %f seconds.\n", end - start);
-    // printArray(array, sizeOfArray);
+    // printArray(array, sizeOfArray, 0);
     return 0;
 }
