@@ -40,14 +40,7 @@ void printArray(unsigned long long int *array, unsigned long long int sizeOfArra
     {
         for (unsigned long long int i = 0; i < sizeOfArray; i++)
         {
-            if (i == sizeOfArray - 1)
-            {
-                printf("%llu", array[i]);
-            }
-            else
-            {
-                printf("%llu\n", array[i]);
-            }
+            printf("%llu\n", array[i]);
         }
     }
 }
